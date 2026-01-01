@@ -13,8 +13,8 @@ patches:
   - path: patches/replicas-patch.yaml
 
 images:
-  - name: ACCOUNT_ID.dkr.ecr.ap-southeast-2.amazonaws.com/min-kyeol-storefront
-    newName: 827913617839.dkr.ecr.ap-southeast-2.amazonaws.com/min-kyeol-storefront
+  - name: ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-storefront
+    newName: 827913617839.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-storefront
     newTag: dev-latest
 
 commonLabels:
