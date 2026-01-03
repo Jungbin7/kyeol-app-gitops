@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dashboard-dev
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: kyeol-app
+  source:
+    repoURL: https://github.com/Jungbin7/kyeol-app-gitops.git
+    targetRevision: main
+    path: apps/saleor/overlays/dev
+  destination:
+    name: dev-cluster
+    namespace: kyeol
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - Replace=true
+      - ServerSideApply=true
+
