@@ -2,6 +2,6 @@
 # Phase-1 미적용
 
 # TODO: DEV 오버레이를 참조하여 설정
-# - host: origin-stage-kyeol.msp-g1.click
+# - host: stage.mgz-g2-u3.shop
 # - replicas: 2
 # - 리소스 증가

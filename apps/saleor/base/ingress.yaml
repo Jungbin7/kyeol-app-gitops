@@ -20,7 +20,7 @@ metadata:
     app.kubernetes.io/part-of: saleor
 spec:
   rules:
-    - host: "placeholder.msp-g1.click"
+    - host: "placeholder.mgz-g2-u3.shop"
       http:
         paths:
           - path: /
