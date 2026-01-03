@@ -9,6 +9,8 @@ resources:
   - namespace.yaml
   - deployment-storefront.yaml
   - service-storefront.yaml
+  - deployment-dashboard.yaml
+  - service-dashboard.yaml
   - ingress.yaml
 
 commonLabels:

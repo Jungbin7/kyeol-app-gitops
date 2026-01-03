@@ -25,7 +25,7 @@ metadata:
     alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-northeast-1:827913617839:certificate/f7d794c7-e3c3-4cd2-9ef1-bd4aa7d34834"
 
     # ✅ ExternalDNS가 이 hostname으로 Route53 레코드 생성
-    external-dns.alpha.kubernetes.io/hostname: "dev.mgz-g2-u3.shop,dev-api.mgz-g2-u3.shop"
+    external-dns.alpha.kubernetes.io/hostname: "dev.mgz-g2-u3.shop,dev-api.mgz-g2-u3.shop,dev-dashboard.mgz-g2-u3.shop"
 
 spec:
   # ✅ (권장) 명시적으로 IngressClass 지정 (클러스터 정책에 따라 kubernetes.io/ingress.class만으로도 동작)
@@ -52,3 +52,13 @@ spec:
                 name: saleor-api-svc
                 port:
                   number: 8000
+    - host: dev-dashboard.mgz-g2-u3.shop
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dashboard-svc
+                port:
+                  number: 80

@@ -1,0 +1,51 @@
+# Saleor Base: Dashboard Deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dashboard
+  namespace: kyeol
+  labels:
+    app: dashboard
+    app.kubernetes.io/name: dashboard
+    app.kubernetes.io/part-of: saleor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dashboard
+  template:
+    metadata:
+      labels:
+        app: dashboard
+    spec:
+      containers:
+        - name: dashboard
+          # ECR 이미지 URL (placeholder)
+          image: 827913617839.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-dashboard:dev-latest
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: API_URL
+              value: "https://dev-api.mgz-g2-u3.shop/graphql/"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+

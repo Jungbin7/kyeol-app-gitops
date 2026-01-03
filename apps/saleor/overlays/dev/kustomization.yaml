@@ -16,6 +16,9 @@ images:
   - name: 827913617839.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-storefront
     newName: 827913617839.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-storefront
     newTag: dev-latest
+  - name: 827913617839.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-dashboard
+    newName: 827913617839.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-dashboard
+    newTag: dev-latest
 
 commonLabels:
   environment: dev
