@@ -23,7 +23,7 @@ spec:
       containers:
         - name: storefront
           # ECR 이미지 URL (placeholder)
-          image: ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-storefront:latest
+          image: YOUR_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-storefront:latest
           ports:
             - containerPort: 3000
               protocol: TCP

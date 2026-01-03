@@ -16,8 +16,7 @@ spec:
     path: apps/saleor/overlays/dev
 
   destination:
-    # DEV 클러스터 (MGMT에서 외부 클러스터로 등록 필요)
-    server: https://kubernetes.default.svc  # TODO: DEV 클러스터 URL로 변경
+    name: dev-cluster
     namespace: kyeol
 
   syncPolicy:

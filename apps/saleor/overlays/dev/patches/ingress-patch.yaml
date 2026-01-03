@@ -23,7 +23,7 @@ metadata:
     alb.ingress.kubernetes.io/ssl-redirect: "443"
 
     # ✅ ACM 인증서 ARN (ap-northeast-1) - 실제 ISSUED 된 와일드카드 ACM 적용
-    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-northeast-1:827913617839:certificate/CERT_ID_HERE"
+    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-northeast-1:YOUR_ACCOUNT_ID:certificate/CERT_ID_HERE"
 
     # ✅ ExternalDNS가 이 hostname으로 Route53 레코드 생성
     external-dns.alpha.kubernetes.io/hostname: "origin-dev-kyeol.msp-g1.click"

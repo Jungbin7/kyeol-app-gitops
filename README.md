@@ -35,9 +35,9 @@ kubectl apply -f argocd/applications/saleor-dev.yaml
 
 배포 전 다음 값을 실제 값으로 교체하세요:
 
-1. **ECR 이미지 URL**: `ACCOUNT_ID.dkr.ecr.ap-southeast-2.amazonaws.com/...`
-2. **ACM 인증서 ARN**: `arn:aws:acm:ap-southeast-2:ACCOUNT_ID:certificate/...`
-3. **GitHub 레포 URL**: `https://github.com/YOUR_ORG/...`
+1. **ECR 이미지 URL**: `YOUR_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/...`
+2. **ACM 인증서 ARN**: `arn:aws:acm:ap-northeast-1:YOUR_ACCOUNT_ID:certificate/...`
+3. **GitHub 레포 URL**: `https://github.com/jungbin7/...`
 
 ## 도메인 설정
 
