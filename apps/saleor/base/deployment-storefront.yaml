@@ -23,15 +23,15 @@ spec:
       containers:
         - name: storefront
           # ECR 이미지 URL (placeholder)
-          image: YOUR_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-storefront:latest
+          image: 827913617839.dkr.ecr.ap-northeast-1.amazonaws.com/jung-kyeol-storefront:latest
           ports:
             - containerPort: 3000
               protocol: TCP
           env:
             - name: NEXT_PUBLIC_API_URI
-              value: "https://origin-dev-kyeol.msp-g1.click/graphql/"
+              value: "https://dev-api.mgz-g2-u3.shop/graphql/"
             - name: NEXT_PUBLIC_STOREFRONT_URL
-              value: "https://origin-dev-kyeol.msp-g1.click"
+              value: "https://dev.mgz-g2-u3.shop"
           resources:
             requests:
               cpu: 100m

@@ -1,5 +1,4 @@
-# Saleor DEV Overlay: Ingress Patch
-# origin-dev-kyeol.msp-g1.click 도메인 설정
+# dev.mgz-g2-u3.shop 도메인 설정
 
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -23,17 +22,17 @@ metadata:
     alb.ingress.kubernetes.io/ssl-redirect: "443"
 
     # ✅ ACM 인증서 ARN (ap-northeast-1) - 실제 ISSUED 된 와일드카드 ACM 적용
-    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-northeast-1:YOUR_ACCOUNT_ID:certificate/CERT_ID_HERE"
+    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-northeast-1:827913617839:certificate/87f8976b-3121-4f1b-a337-b9560a876a44"
 
     # ✅ ExternalDNS가 이 hostname으로 Route53 레코드 생성
-    external-dns.alpha.kubernetes.io/hostname: "origin-dev-kyeol.msp-g1.click"
+    external-dns.alpha.kubernetes.io/hostname: "dev.mgz-g2-u3.shop,dev-api.mgz-g2-u3.shop"
 
 spec:
   # ✅ (권장) 명시적으로 IngressClass 지정 (클러스터 정책에 따라 kubernetes.io/ingress.class만으로도 동작)
   ingressClassName: alb
 
   rules:
-    - host: origin-dev-kyeol.msp-g1.click
+    - host: dev.mgz-g2-u3.shop
       http:
         paths:
           - path: /
@@ -43,3 +42,13 @@ spec:
                 name: storefront-svc
                 port:
                   number: 3000
+    - host: dev-api.mgz-g2-u3.shop
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: saleor-api-svc
+                port:
+                  number: 8000
